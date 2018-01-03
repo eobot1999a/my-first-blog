@@ -1,0 +1,11 @@
+git remote add origin https://github.com/eobot1999/my-first-blog.git*.pyc
+*~
+__pycache__
+myvenv
+\myvenv
+.idea
+/.idea
+db.sqlite3
+/static
+.DS_Store
+
