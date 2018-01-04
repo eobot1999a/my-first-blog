@@ -15,16 +15,23 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 
+def post_detail2(request, pk, ps):
+    if ps != "123456789": pk = 0
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail2.html', {'post': post})
+
+
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-
+# dump(request.data)
             k = len(Post.objects.all())
             if k > 0:
                 p = Post.objects.filter(pk=k)[0]  # last record
-                print('p='+p.title)
-                #print('='+form.fields)
+               # print('p='+p.title)
+
+               # print('='+form.fields)
                 #if p.title == request.POST.title and p.text == request.POST.text:
                 #    return redirect('post_list')
             # endif
